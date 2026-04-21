@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Medidores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Registro de Lectura</h1>
+        
+        <form id="registroForm">
+            <div class="form-group">
+                <label>Lote *</label>
+                <select id="lote" required>
+                    <option value="">Seleccione...</option>
+                    <optgroup label="Lotes 1-168" id="lotesOptgroup"></optgroup>
+                    <optgroup label="Dormis">
+                        <option value="DORMI-1">Dormi 1</option>
+                        <option value="DORMI-2">Dormi 2</option>
+                        <option value="DORMI-3">Dormi 3</option>
+                        <option value="DORMI-4">Dormi 4</option>
+                        <option value="DORMI-5">Dormi 5</option>
+                    </optgroup>
+                    <optgroup label="Otros">
+                        <option value="MEDIDOR-AYSA">Medidor Aysa</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Lectura actual (número) *</label>
+                <input type="number" id="lectura" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Observaciones</label>
+                <textarea id="observaciones" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Foto</label>
+                <input type="file" id="foto" accept="image/*">
+                <div id="preview"></div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">💾 Guardar</button>
+                <button type="button" id="nuevoBtn">🔄 Nuevo</button>
+            </div>
+        </form>
+
+        <div id="infoAnterior" class="info-card" style="display:none">
+            <h3>📈 Lectura anterior</h3>
+            <p><strong>Fecha:</strong> <span id="fechaAnt"></span></p>
+            <p><strong>Lectura:</strong> <span id="lecturaAnt"></span></p>
+            <p><strong>Días:</strong> <span id="dias"></span></p>
+            <p><strong>Promedio/día:</strong> <span id="promedio"></span></p>
+        </div>
+
+        <div id="mensaje"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
